@@ -11,6 +11,7 @@ class SearchBar extends React.Component{
     onFormSubmit = (event) => {
         event.preventDefault();
 
+        this.props.onFormSubmit(this.state.myInput)
         //Make sure we call
         //From parent component
     }
@@ -20,11 +21,14 @@ class SearchBar extends React.Component{
             <div className="searchbar-style ui segment">
                 <form onSubmit={this.onFormSubmit} className="ui form">
                     <div className="field">
-                        <laber>What are you looking for?</laber>
+                        <label>What are you looking for?</label>
+                        <div className="ui icon input">
                         <input 
                             type="text" 
                             value={this.state.myInput}
                             onChange={this.onInputChange} />
+                            <i class="search icon"></i>
+                        </div>
                     </div>
                 </form>
             </div>
